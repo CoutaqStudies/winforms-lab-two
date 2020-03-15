@@ -33,27 +33,32 @@ namespace WindowsFormsTest
         }
         private void textBoxPassword_TextChanged(object sender, EventArgs e)
         {
-            buttonLogIn.Visible = true;
+            if(textBoxPassword.Text != "Please enter your password" && textBoxPassword.Text != String.Empty && textBoxPassword.Text != "")
+                buttonLogIn.Visible = true;
         }
         private void textBoxLogin_Enter(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
         if (e.KeyChar == (char)Keys.Return)
-            {
                 textBoxPassword.Select();
-            }
         }
         private void textBoxPassword_Clicked(object sender, EventArgs e)
         {
-            if (textBoxPassword.Text == "Password")
+            if (textBoxPassword.Text == "Please enter your password")
                 textBoxPassword.ResetText();
             if (showPassword.Checked)
                 textBoxPassword.PasswordChar = '\0';
             else
                 textBoxPassword.PasswordChar = '*';
         }
+        private void textBoxPassword_Enter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+                buttonLogIn.PerformClick();
+        }
         private void textBoxLogin_Clicked(object sender, EventArgs e)
         {
-            textBoxLogin.Text = String.Empty;
+            if(textBoxLogin.Text== "Please enter your login")
+             textBoxLogin.Text = String.Empty;
         }
 
         private void showPassword_CheckedChanged(object sender, EventArgs e)
@@ -64,9 +69,18 @@ namespace WindowsFormsTest
                 textBoxPassword.PasswordChar = '*';
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tableLayoutForm.BackColor = Color.FromName(textBoxColor.Text);
+        }
+
+        private void buttonLogIn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OrganizerForm organizerForm = new OrganizerForm();
+            organizerForm.Closed += (s, args) => this.Close();
+            organizerForm.Show();
         }
     }
 }
