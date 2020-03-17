@@ -284,7 +284,7 @@ namespace WindowsFormsTest
             this.buttonChangeColor.TabIndex = 10;
             this.buttonChangeColor.Text = "u";
             this.buttonChangeColor.UseVisualStyleBackColor = true;
-            this.buttonChangeColor.Click += new System.EventHandler(this.button1_Click);
+            this.buttonChangeColor.Click += new System.EventHandler(this.buttonChangeColor_Click);
             // 
             // textBoxColor
             // 
@@ -295,7 +295,8 @@ namespace WindowsFormsTest
             this.textBoxColor.Name = "textBoxColor";
             this.textBoxColor.Size = new System.Drawing.Size(117, 20);
             this.textBoxColor.TabIndex = 9;
-            this.textBoxColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPassword_Enter);
+            //todO
+            this.textBoxColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxColor_Enter);
             // 
             // LoginForm
             // 
