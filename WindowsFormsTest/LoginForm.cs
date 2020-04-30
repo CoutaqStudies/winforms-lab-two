@@ -56,6 +56,11 @@ namespace WindowsFormsTest
             if (e.KeyChar == (char)Keys.Return)
                 buttonLogIn.PerformClick();
         }
+        private void textBoxColor_Enter(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+                buttonChangeColor.PerformClick();
+        }
         private void textBoxLogin_Clicked(object sender, EventArgs e)
         {
             if(textBoxLogin.Text== "Please enter your login")
@@ -71,7 +76,7 @@ namespace WindowsFormsTest
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonChangeColor_Click(object sender, EventArgs e)
         {
             tableLayoutForm.BackColor = Color.FromName(textBoxColor.Text);
             metroLabel1.BackColor = Color.FromName(textBoxColor.Text);
