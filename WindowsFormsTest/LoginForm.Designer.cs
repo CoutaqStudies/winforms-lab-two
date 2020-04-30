@@ -33,6 +33,7 @@ namespace WindowsFormsTest
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.tableLogin = new System.Windows.Forms.TableLayoutPanel();
             this.textWelcome = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
@@ -43,8 +44,9 @@ namespace WindowsFormsTest
             this.buttonLogIn = new System.Windows.Forms.Button();
             this.tableLayoutForm = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutColor = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonChangeColor = new System.Windows.Forms.Button();
             this.textBoxColor = new System.Windows.Forms.TextBox();
+            this.buttonChangeColor = new System.Windows.Forms.Button();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.tableLogin.SuspendLayout();
             this.tableLayoutForm.SuspendLayout();
             this.tableLayoutColor.SuspendLayout();
@@ -263,39 +265,57 @@ namespace WindowsFormsTest
             this.tableLayoutColor.ColumnCount = 2;
             this.tableLayoutColor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutColor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutColor.Controls.Add(this.buttonChangeColor, 1, 0);
-            this.tableLayoutColor.Controls.Add(this.textBoxColor, 0, 0);
+            this.tableLayoutColor.Controls.Add(this.textBoxColor, 0, 1);
+            this.tableLayoutColor.Controls.Add(this.buttonChangeColor, 1, 1);
+            this.tableLayoutColor.Controls.Add(this.metroLabel1, 0, 0);
             this.tableLayoutColor.Location = new System.Drawing.Point(643, 3);
+            this.tableLayoutColor.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.tableLayoutColor.Name = "tableLayoutColor";
             this.tableLayoutColor.RowCount = 2;
             this.tableLayoutColor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutColor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutColor.Size = new System.Drawing.Size(154, 69);
+            this.tableLayoutColor.Size = new System.Drawing.Size(154, 47);
             this.tableLayoutColor.TabIndex = 1;
-            // 
-            // buttonChangeColor
-            // 
-            this.buttonChangeColor.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.buttonChangeColor.Font = new System.Drawing.Font("Wingdings", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.buttonChangeColor.Location = new System.Drawing.Point(123, 2);
-            this.buttonChangeColor.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.buttonChangeColor.Name = "buttonChangeColor";
-            this.buttonChangeColor.Size = new System.Drawing.Size(31, 23);
-            this.buttonChangeColor.TabIndex = 10;
-            this.buttonChangeColor.Text = "u";
-            this.buttonChangeColor.UseVisualStyleBackColor = true;
-            this.buttonChangeColor.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxColor
             // 
             this.textBoxColor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxColor.Location = new System.Drawing.Point(3, 3);
+            this.textBoxColor.Location = new System.Drawing.Point(3, 26);
             this.textBoxColor.Name = "textBoxColor";
             this.textBoxColor.Size = new System.Drawing.Size(117, 20);
             this.textBoxColor.TabIndex = 9;
             this.textBoxColor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPassword_Enter);
+            // 
+            // buttonChangeColor
+            // 
+            this.buttonChangeColor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonChangeColor.Font = new System.Drawing.Font("Wingdings", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.buttonChangeColor.Location = new System.Drawing.Point(123, 25);
+            this.buttonChangeColor.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.buttonChangeColor.Name = "buttonChangeColor";
+            this.buttonChangeColor.Size = new System.Drawing.Size(31, 22);
+            this.buttonChangeColor.TabIndex = 10;
+            this.buttonChangeColor.Text = "u";
+            this.buttonChangeColor.UseVisualStyleBackColor = true;
+            this.buttonChangeColor.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.ForeColor = System.Drawing.SystemColors.Control;
+            this.metroLabel1.Location = new System.Drawing.Point(30, 0);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(63, 23);
+            this.metroLabel1.TabIndex = 11;
+            this.metroLabel1.Text = "Color?";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.metroLabel1.UseCustomBackColor = true;
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // LoginForm
             // 
@@ -304,6 +324,7 @@ namespace WindowsFormsTest
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutForm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
@@ -333,6 +354,7 @@ namespace WindowsFormsTest
         private System.Windows.Forms.TableLayoutPanel tableLayoutColor;
         private System.Windows.Forms.Button buttonChangeColor;
         private System.Windows.Forms.TextBox textBoxColor;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }
 

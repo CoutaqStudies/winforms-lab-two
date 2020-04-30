@@ -12,6 +12,7 @@ namespace WindowsFormsTest
 {
     public partial class LoginForm : System.Windows.Forms.Form
     {
+        private string login = "login", password= "password";
         public LoginForm()
         {
             InitializeComponent();
@@ -73,14 +74,30 @@ namespace WindowsFormsTest
         private void button1_Click(object sender, EventArgs e)
         {
             tableLayoutForm.BackColor = Color.FromName(textBoxColor.Text);
+            metroLabel1.BackColor = Color.FromName(textBoxColor.Text);
         }
+
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            OrganizerForm organizerForm = new OrganizerForm();
-            organizerForm.Closed += (s, args) => this.Close();
-            organizerForm.Show();
+            if (this.textBoxLogin.Text.ToLower().Equals(login))
+            {
+                if (this.textBoxPassword.Text.Equals(password))
+                {
+                    this.Hide();
+                    OrganizerForm organizerForm = new OrganizerForm();
+                    organizerForm.Closed += (s, args) => this.Close();
+                    organizerForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect password!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Incorrect login!");
+            }
         }
     }
 }
